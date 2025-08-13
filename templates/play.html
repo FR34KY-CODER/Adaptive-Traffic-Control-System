@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Playback — Adaptive Traffic{% endblock %}
+{% block content %}
+<div class="card card-elevated">
+  <div class="card-body">
+    <h5 class="card-title"><i class="bi bi-play-btn me-2"></i>Processed Stream</h5>
+    <div class="mt-3 stream-wrap">
+      <img id="vidStream" class="stream" src="{{ url_for('video_feed', vid_id=vid_id) }}" alt="video stream" />
+      <div class="skeleton" id="vidSkeleton"></div>
+    </div>
+    <div class="form-text mt-2">Boxes + queue + timing are overlaid on the stream.</div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  setupStreamControls("vidStream", "vidSkeleton", "{{ url_for('video_feed', vid_id=vid_id) }}", { showPause:false });
+</script>
+{% endblock %}

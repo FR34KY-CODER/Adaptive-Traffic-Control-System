@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Camera — Adaptive Traffic{% endblock %}
+{% block content %}
+<div class="card card-elevated">
+  <div class="card-body">
+    <div class="d-flex align-items-center justify-content-between">
+      <h5 class="card-title mb-0"><i class="bi bi-camera-video me-2"></i>Camera Mode</h5>
+      <div class="btn-group">
+        <button class="btn btn-outline-light btn-sm" id="pauseBtn"><i class="bi bi-pause"></i> Pause</button>
+        <button class="btn btn-outline-light btn-sm" id="resumeBtn" disabled><i class="bi bi-play-fill"></i> Resume</button>
+        <button class="btn btn-outline-light btn-sm" id="snapBtn"><i class="bi bi-camera"></i> Snapshot</button>
+      </div>
+    </div>
+    <div class="mt-3 stream-wrap">
+      <img id="camStream" class="stream" src="{{ url_for('camera_feed') }}" alt="camera stream" />
+      <div class="skeleton" id="camSkeleton"></div>
+    </div>
+    <div class="form-text mt-2">Press Pause to stop fetching new frames (saves CPU). Snapshot downloads the current frame.</div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  setupStreamControls("camStream", "camSkeleton", "{{ url_for('camera_feed') }}");
+</script>
+{% endblock %}

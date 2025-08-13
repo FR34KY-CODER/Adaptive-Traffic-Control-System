@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Home — Adaptive Traffic{% endblock %}
+{% block content %}
+<div class="row g-4">
+  <div class="col-lg-7">
+    <div class="card card-elevated">
+      <div class="card-body">
+        <h5 class="card-title"><i class="bi bi-joystick me-2"></i>Quick Actions</h5>
+        <p class="text-secondary">Choose a mode to start detection and queue-based timing.</p>
+        <div class="d-flex flex-wrap gap-2">
+          <a class="btn btn-primary" href="{{ url_for('camera_page') }}"><i class="bi bi-camera-video"></i> Camera mode</a>
+          <a class="btn btn-outline-primary" href="{{ url_for('upload_page') }}"><i class="bi bi-upload"></i> Upload video</a>
+        </div>
+        <hr class="my-4">
+        <div class="d-flex align-items-center gap-3">
+          <div class="signal">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="small text-secondary">
+            The algorithm samples the <b>stopped queue</b> during RED, then sets GREEN time via a rule: <code>base + k * queue</code> (clamped).
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-5">
+    <div class="card card-elevated">
+      <div class="card-body">
+        <h5 class="card-title"><i class="bi bi-bounding-box-circles me-2"></i>ROI (Region of Interest)</h5>
+        <p class="text-secondary">Set the polygon covering the stopped area near the stop line. Both modes use the same ROI.</p>
+        <form class="row g-2" action="{{ url_for('set_roi') }}" method="post">
+          <div class="col-12">
+            <label class="form-label">Points <small class="text-secondary">(format: <code>x,y;x,y;...</code>)</small></label>
+            <input class="form-control font-mono" type="text" name="roi_str" id="roiInput" value="{{ roi_str }}" />
+          </div>
+          <div class="col-12 d-flex gap-2">
+            <button class="btn btn-success" type="submit"><i class="bi bi-save"></i> Save ROI</button>
+            <button class="btn btn-outline-secondary" type="button" id="copyRoi"><i class="bi bi-clipboard"></i> Copy</button>
+            <button class="btn btn-outline-secondary" type="button" id="resetRoi"><i class="bi bi-arrow-counterclockwise"></i> Reset</button>
+          </div>
+          <div class="form-text">Tip: You can refine ROI while viewing the stream to reduce false counts.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
