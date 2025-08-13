@@ -31,7 +31,7 @@
 ## 🧠 How It Works
 
 ```mermaid
-flowchart LR
+flowchart LR;
   A[Camera / Uploaded Video] -->|Frame| B[YOLOv8 Detector]
   B --> C{Accept classes? <br/>car, bus, moto, auto, truck}
   C -->|Yes| D[ROI center test]
