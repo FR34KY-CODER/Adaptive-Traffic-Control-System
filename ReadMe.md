@@ -31,15 +31,15 @@
 ## 🧠 How It Works
 
 ```mermaid
-flowchart LR;
+flowchart LR
   A[Camera / Uploaded Video] -->|Frame| B[YOLOv8 Detector]
-  B --> C{Accept classes? <br/>car, bus, moto, auto, truck}
+  B --> C{Accept classes?}
   C -->|Yes| D[ROI center test]
   D -->|Inside| E[Queue count]
-  E --> F[Queue buffer (2.5s) while RED]
+  E --> F["Queue buffer (2.5s) during RED"]
   F --> G[Median queue]
-  G --> H[GREEN time = clamp(min, base + k*q + bonus(wait), max)]
-  H --> I[RED→GREEN→YELLOW state machine]
+  G --> H["GREEN = clamp(min, base + k*q + bonus(wait), max)"]
+  H --> I["Signal FSM: RED → GREEN → YELLOW"]
   I --> J[Overlay HUD + Light widget]
   J --> K[Stream to browser]
   C -->|No| J
