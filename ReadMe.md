@@ -22,12 +22,9 @@
 
 ## 📽️ Live & Upload Demos
 
-| Mode            | Preview                                    |
-| --------------- | ------------------------------------------ |
-| **Camera Mode** | ![camera demo](docs/media/live_camera.gif) |
-| **Upload Mode** | ![upload demo](docs/media/upload_demo.gif) |
-
-> Replace the GIFs above with your recordings. See “Make GIFs”.
+<img src="https://github.com/FR34KY-CODER/Adaptive-Traffic-Control-System/blob/main/Screenshots/1.png?raw=true" align = center>
+<br>
+<img src = "https://github.com/FR34KY-CODER/Adaptive-Traffic-Control-System/blob/main/Screenshots/2.png?raw=true" align = center>
 
 ---
 
