@@ -3,15 +3,8 @@
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB.svg?logo=python\&logoColor=white)](https://www.python.org/)
 [![Flask](https://img.shields.io/badge/Flask-2.x-000000.svg?logo=flask\&logoColor=white)](https://flask.palletsprojects.com/)
 [![YOLOv8](https://img.shields.io/badge/YOLOv8-ultralytics-8A2BE2.svg)](https://docs.ultralytics.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 > **AI-powered signal timing** that counts stopped vehicles near the stop-line and dynamically picks the **next green time**. Works with **live webcam** or **uploaded videos**. Built with **YOLOv8**, **OpenCV**, and **Flask**.
-
-<p align="center">
-  <img src="docs/media/hero_demo.gif" width="85%" alt="Demo GIF placeholder"/>
-</p>
-
-> *Tip: Add your own demo GIF to `docs/media/hero_demo.gif` (see “Make GIFs” below).*
 
 ---
 
@@ -241,28 +234,10 @@ ffmpeg -y -i docs/media/hero_clip.mp4 -vf "fps=12,scale=960:-1:flags=lanczos" -r
 
 ---
 
-## 🧾 License
-
-MIT — do what you want, just keep the notice.
-
----
-
 ## 🙏 Acknowledgements
 
 * **Ultralytics YOLOv8** for a great training/inference API.
 * **IITM-HeTra / IRUVD** datasets for India-centric visuals.
-
----
-
-## 😅 Bonus (meme corner)
-
-Because traffic. Add your meme to `docs/media/meme.jpg`:
-
-<p align="center">
-  <img src="docs/media/meme.jpg" width="60%" alt="Meme placeholder"/>
-</p>
-
-> *“Green means go. AI means go smarter.”* 🚦
 
 ---
 
